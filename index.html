@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>North Pole Pen Pal | Magical Elf Letters for Kids</title>
+    <meta
+      name="description"
+      content="A magical Christmas pen pal app where kids message friendly elves at the North Pole. Safe AI friendships, parent controls, and workshop wonder."
+    />
+    <meta
+      name="keywords"
+      content="Elf Pen Pal, Letters from the North Pole, Santa Letters, Christmas App for Kids, Elf Friend, Santa Pen Pal, Christmas Magic, North Pole Letters, Elf Mail, Santa's Workshop"
+    />
+    <meta property="og:title" content="North Pole Pen Pal — Magical Elf Messaging for Kids" />
+    <meta
+      property="og:description"
+      content="Kids build a lasting friendship with an elf from Santa's workshop through safe, magical instant messages."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --red: #9f1239;
+        --green: #16a34a;
+        --gold: #fbbf24;
+        --cream: #fff7ed;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--cream);
+        background:
+          radial-gradient(circle at 15% 20%, rgba(22, 163, 74, 0.28), transparent 28%),
+          radial-gradient(circle at 85% 10%, rgba(190, 18, 60, 0.28), transparent 26%),
+          linear-gradient(180deg, #050505 0%, #0a0f0a 45%, #140a0a 100%);
+        overflow-x: hidden;
+      }
+      .snow {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        overflow: hidden;
+      }
+      .flake {
+        position: absolute;
+        top: -12px;
+        border-radius: 999px;
+        background: #fff;
+        animation: fall linear infinite;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+      }
+      @keyframes fall {
+        to {
+          transform: translate3d(12px, 110vh, 0) rotate(360deg);
+        }
+      }
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+      .card {
+        border: 1px solid rgba(251, 191, 36, 0.25);
+        background: linear-gradient(160deg, rgba(20, 20, 20, 0.92), rgba(12, 40, 24, 0.88));
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      }
+      h1 {
+        margin: 12px 0 0;
+        font-size: clamp(2rem, 6vw, 3.4rem);
+        color: #fef3c7;
+      }
+      .eyebrow {
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: var(--gold);
+      }
+      p {
+        line-height: 1.6;
+        color: rgba(255, 247, 237, 0.8);
+      }
+      .actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+      a.btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 14px 18px;
+        font-weight: 700;
+        font-family: system-ui, sans-serif;
+      }
+      .red {
+        background: linear-gradient(135deg, #9f1239, #7f1d1d);
+        color: #fff7ed;
+      }
+      .green {
+        background: linear-gradient(135deg, #15803d, #14532d);
+        color: #ecfdf5;
+      }
+      .gold {
+        background: linear-gradient(135deg, #fbbf24, #d97706);
+        color: #1c1917;
+      }
+      .ghost {
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(251, 191, 36, 0.35);
+        color: #fef3c7;
+      }
+      .note {
+        margin-top: 22px;
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        color: rgba(187, 247, 208, 0.8);
+      }
+      .grid {
+        display: grid;
+        gap: 14px;
+        margin-top: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .mini {
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.35);
+        padding: 16px;
+        font-family: system-ui, sans-serif;
+      }
+      .mini h3 {
+        margin: 0 0 8px;
+        color: #fde68a;
+        font-size: 16px;
+      }
+      .mini p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="snow" id="snow" aria-hidden="true"></div>
+    <main class="wrap">
+      <section class="card">
+        <div class="eyebrow">Santa's Workshop • Static preview</div>
+        <h1>North Pole Pen Pal</h1>
+        <p>
+          A magical Christmas messaging world where children build an ongoing pen-pal friendship
+          with an elf at the North Pole. This <code>index.html</code> is included for Vercel static
+          previews and Spck Editor. The full product runs on Next.js with parent controls, kid chat,
+          AI elf replies, wall designs, music, and an admin dashboard.
+        </p>
+        <div class="actions">
+          <a class="btn red" href="/parent/register">Parent Register</a>
+          <a class="btn green" href="/parent/login">Parent Login</a>
+          <a class="btn gold" href="/kid/register">Kid Register</a>
+          <a class="btn ghost" href="/kid/login">Kid Login</a>
+        </div>
+        <p class="note">
+          Full app routes: <a href="/" style="color: #fbbf24">/</a> •
+          <a href="/admin/login" style="color: #fbbf24">Admin</a> •
+          <a href="/support" style="color: #fbbf24">Support</a>
+        </p>
+        <div class="grid">
+          <article class="mini">
+            <h3>20 Elf Friends</h3>
+            <p>Jingle, Holly, Spark, Lumina and more with unique jobs, treats, and personalities.</p>
+          </article>
+          <article class="mini">
+            <h3>Parent Controls</h3>
+            <p>Read every letter, manage kids, subscriptions, alerts, and share the magic.</p>
+          </article>
+          <article class="mini">
+            <h3>Admin Workshop</h3>
+            <p>Reply to support mail, add elves, quotes, music, and custom kid wall designs.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      const snow = document.getElementById("snow");
+      for (let i = 0; i < 42; i++) {
+        const flake = document.createElement("span");
+        flake.className = "flake";
+        const size = 3 + Math.random() * 7;
+        flake.style.left = Math.random() * 100 + "%";
+        flake.style.width = size + "px";
+        flake.style.height = size + "px";
+        flake.style.opacity = 0.35 + Math.random() * 0.55;
+        flake.style.animationDuration = 8 + Math.random() * 14 + "s";
+        flake.style.animationDelay = Math.random() * -20 + "s";
+        snow.appendChild(flake);
+      }
+    </script>
+  </body>
+</html>
