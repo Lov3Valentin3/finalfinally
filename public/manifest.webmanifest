@@ -1,0 +1,18 @@
+
+  "name": "North Pole Pen Pal",
+  "short_name": "ElfPenPal",
+  "description": "Magical Christmas pen pal messaging with elves at the North Pole.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#14532d",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
