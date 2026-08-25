@@ -1,0 +1,134 @@
+@import "tailwindcss";
+:root {
+  --np-bg: #050505;
+  --np-red: #9f1239;
+  --np-green: #16a34a;
+  --np-gold: #fbbf24;
+  --np-cream: #fff7ed;
+}
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+}
+html,
+body {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: #050505;
+  color: #fff7ed;
+  font-family: var(--font-sans);
+}
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+.snowflake {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(12px, 110vh, 0) rotate(360deg);
+  }
+}
+.twinkle {
+  animation: twinkle 2.2s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+.magical-card {
+  background: linear-gradient(160deg, rgba(20, 20, 20, 0.92), rgba(12, 40, 24, 0.88));
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+.btn-magic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+.btn-magic:hover {
+  transform: translateY(-2px) scale(1.01);
+  filter: brightness(1.08);
+}
+.btn-magic:active {
+  transform: translateY(0);
+}
+.btn-red {
+  background: linear-gradient(135deg, #9f1239, #7f1d1d);
+  color: #fff7ed;
+  box-shadow: 0 10px 30px rgba(127, 29, 29, 0.45);
+}
+.btn-green {
+  background: linear-gradient(135deg, #15803d, #14532d);
+  color: #ecfdf5;
+  box-shadow: 0 10px 30px rgba(21, 128, 61, 0.4);
+}
+.btn-gold {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #1c1917;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.35);
+}
+.btn-ghost {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: #fef3c7;
+}
+.input-magic {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff7ed;
+  padding: 0.85rem 1rem;
+  outline: none;
+}
+.input-magic:focus {
+  border-color: rgba(34, 197, 94, 0.7);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+.input-magic::placeholder {
+  color: rgba(254, 243, 199, 0.45);
+}
+.chat-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.35);
+  border-radius: 999px;
+}
+.aurora-bg {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(22, 163, 74, 0.28), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(190, 18, 60, 0.28), transparent 26%),
+    radial-gradient(circle at 50% 90%, rgba(251, 191, 36, 0.12), transparent 30%),
+    linear-gradient(180deg, #050505 0%, #0a0f0a 45%, #140a0a 100%);
+}
+.prose-festive p {
+  margin: 0.4rem 0;
+}
