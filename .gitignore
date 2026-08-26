@@ -1,0 +1,51 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+# testing
+coverage/
+*.lcov
+# next.js
+.next/
+out/
+next-env.d.ts
+# production
+build/
+dist/
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+# env files (secrets — never commit real credentials)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+# vercel
+.vercel
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+# drizzle
+drizzle/meta/
+# OS / editor
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+# local tooling
+.spck/
+.turbo/
+.cache/
