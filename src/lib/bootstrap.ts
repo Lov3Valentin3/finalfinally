@@ -45,29 +45,36 @@ export async function ensureSeedData() {
         DEFAULT_MUSIC.map((m) => ({ ...m, isActive: true }))
       );
     }
+    const adminEmail = (
+      process.env.ADMIN_EMAIL || "admin@northpole.app"
+    ).toLowerCase();
+    const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
     const [adminCount] = await db.select({ value: count() }).from(admins);
     if ((adminCount?.value ?? 0) === 0) {
       await db.insert(admins).values({
-        email: "admin@northpole.app",
+        email: adminEmail,
         name: "Workshop Admin",
-        passwordHash: await hashPassword("admin123"),
+        passwordHash: await hashPassword(adminPassword),
       });
     } else {
-      // Ensure default admin password remains usable in demo environments
       const existing = await db
         .select()
         .from(admins)
-        .where(eq(admins.email, "admin@northpole.app"))
+        .where(eq(admins.email, adminEmail))
         .limit(1);
       if (existing.length === 0) {
         await db.insert(admins).values({
-          email: "admin@northpole.app",
+          email: adminEmail,
           name: "Workshop Admin",
-          passwordHash: await hashPassword("admin123"),
+          passwordHash: await hashPassword(adminPassword),
         });
       }
     }
     bootstrapped = true;
+  } catch (error) {
+    console.error("Seed failed", error);
+  }
+}
   } catch (error) {
     console.error("Seed failed", error);
   }
